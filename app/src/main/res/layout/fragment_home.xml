@@ -4,41 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:background="@drawable/evening_background"
     android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingTop="60dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="20dp"
     tools:context=".HomeFragment">
 
     <TextView
         android:id="@+id/tvGreetingTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Good evening,"
-        android:textSize="30sp" />
+        android:fontFamily="@font/inter_bold"
+        android:text="Good evening, "
+        android:textColor="#25382D"
+        android:textSize="28sp" />
 
     <TextView
         android:id="@+id/tvGreetingName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dov"
-        android:textSize="30sp" />
+        android:layout_marginTop="-12dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="Niv"
+        android:textColor="#25382D"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/tvDailyInspiration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-5dp"
+        android:fontFamily="@font/inter_italic"
         android:text="Small steps make a big journey."
-        android:textSize="30sp" />
+        android:textColor="#66776B"
+        android:textSize="14sp">
+
+    </TextView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/btnTakeABreath"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="115dp"
         android:clickable="true"
         app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="150dp"
-        app:cardElevation="5dp"
-        app:strokeColor="#8A9A86"
-        app:strokeWidth="3dp">
+        app:cardCornerRadius="130dp"
+        app:cardElevation="2dp"
+        app:strokeColor="#8FA893"
+        app:strokeWidth="2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,8 +68,10 @@
 
             <ImageView
                 android:id="@+id/ivBreathBtnIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="31dp">
+                android:layout_width="179dp"
+                android:layout_height="145dp"
+                android:src="@drawable/take_a_breath_icon"
+                app:tint="#718D77">
 
             </ImageView>
 
@@ -61,17 +79,156 @@
                 android:id="@+id/tvBreathBtnText"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:fontFamily="@font/nunito_regular"
+                android:layout_marginTop="-10dp"
+                android:fontFamily="@font/inter_semibold"
                 android:text="Take a breath"
                 android:textAlignment="center"
-                android:textColor="#2B2B2B"
-                android:textSize="30sp"
+                android:textColor="#718D77"
+                android:textSize="20sp"
                 android:textStyle="bold">
 
             </TextView>
 
-
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvQuickWin"
+        android:layout_width="wrap_content"
+        android:layout_height="57dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:clickable="true"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="35dp"
+        app:cardElevation="2dp"
+        app:strokeColor="#8A9A86"
+        app:strokeWidth="1.25dp">
+
+        <LinearLayout
+            android:layout_width="365dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="18dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="18dp">
+
+            <EditText
+                android:id="@+id/etQuickWin"
+                android:layout_width="277dp"
+                android:layout_height="52dp"
+                android:fontFamily="@font/inter_regular"
+                android:hint="What went well today?"
+                android:textColor="#7A817C"
+                android:textColorHint="#7A817C"
+                android:textSize="16sp">
+
+            </EditText>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvReleaseFeature"
+            android:layout_width="175dp"
+            android:layout_height="115dp"
+            android:layout_marginTop="15dp"
+            android:clickable="true"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#8A9A86"
+            app:strokeWidth="1.25dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="18dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="18dp">
+
+                <TextView
+                    android:id="@+id/tvReleaseFeature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:fontFamily="@font/inter_light"
+                    android:letterSpacing="0.1"
+                    android:text="RELEASE"
+                    android:textColor="#566B5C"
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/ivReleaseBackground"
+                    android:layout_width="175dp"
+                    android:layout_height="66dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/release_graphic"
+                    app:tint="#CDCDCD">
+
+                </ImageView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvRehearseFeature"
+            android:layout_width="175dp"
+            android:layout_height="115dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:clickable="true"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#8A9A86"
+            app:strokeWidth="1.25dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="18dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="18dp">
+
+                <TextView
+                    android:id="@+id/tvRehearseFeature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:fontFamily="@font/inter_light"
+                    android:letterSpacing="0.1"
+                    android:text="REHEARSE"
+                    android:textColor="#566B5C"
+                    android:textSize="16sp">
+
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/ivRehearseBackground"
+                    android:layout_width="175dp"
+                    android:layout_height="73dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/rehearse_graphic"
+                    app:tint="#CDCDCD">
+
+                </ImageView>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
 </LinearLayout>
