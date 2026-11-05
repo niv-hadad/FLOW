@@ -1,19 +1,64 @@
 package com.niv.flow;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.time.LocalTime;
 
 public class HomeFragment extends Fragment {
+    TextView tvGreetingTime, tvGreetingName, tvDailyInspiration;
+    View homeScreen;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         return inflater.inflate(R.layout.fragment_home, container, false);
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initComponent();
+        changeDesignTime();
+    }
+
+    private void changeDesignTime() {
+        int currentHour = LocalTime.now().getHour();
+
+        tvGreetingTime.setTextColor(Color.parseColor("#25382D"));
+        tvGreetingName.setTextColor(Color.parseColor("#25382D"));
+        tvDailyInspiration.setTextColor(Color.parseColor("#66776B"));
+
+        if (currentHour>=6 && currentHour<=11) {
+            homeScreen.setBackgroundResource(R.drawable.morning_background);
+            tvGreetingTime.setText("Good morning,");
+        } else if (currentHour>=12 && currentHour<=16) {
+            homeScreen.setBackgroundResource(R.drawable.afternoon_background);
+            tvGreetingTime.setText("Good afternoon,");
+        } else if (currentHour>=17 && currentHour<=20) {
+            homeScreen.setBackgroundResource(R.drawable.evening_background);
+            tvGreetingTime.setText("Good evening,");
+        } else if ((currentHour>=21 && currentHour<=23) || (currentHour>=0 && currentHour<=5)) {
+            homeScreen.setBackgroundResource(R.drawable.night_background);
+            tvGreetingTime.setText("Good night,");
+            tvGreetingTime.setTextColor(Color.parseColor("#FFFFFF"));
+            tvGreetingName.setTextColor(Color.parseColor("#E8EDF5"));
+            tvDailyInspiration.setTextColor(Color.parseColor("#D4DFEC"));
+        }
+    }
+
+    private void initComponent() {
+        tvGreetingTime=getView().findViewById(R.id.tvGreetingTime);
+        tvGreetingName=getView().findViewById(R.id.tvGreetingName);
+        tvDailyInspiration=getView().findViewById(R.id.tvDailyInspiration);
+        homeScreen=getView().findViewById(R.id.homeScreen);
     }
 }

@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/evening_background"
+    android:background="@drawable/morning_background"
     android:orientation="vertical"
     android:paddingStart="20dp"
     android:paddingTop="60dp"
@@ -17,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_bold"
-        android:text="Good evening, "
+        android:text="Good morning, "
         android:textColor="#25382D"
         android:textSize="28sp" />
 
