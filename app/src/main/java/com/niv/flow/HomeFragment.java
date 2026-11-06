@@ -1,5 +1,8 @@
 package com.niv.flow;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -11,9 +14,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.niv.flow.models.HelperDB;
+import com.niv.flow.models.User;
+
 import java.time.LocalTime;
 
 public class HomeFragment extends Fragment {
+    HelperDB helperDB;
     TextView tvGreetingTime, tvGreetingName, tvDailyInspiration;
     View homeScreen;
 
@@ -27,6 +34,10 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initComponent();
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("com.niv.flow.SharedPreferences", MODE_PRIVATE);
+        String currentUserId = sharedPreferences.getString("current_user", "");
+        User currentUser = helperDB.getUserById(currentUserId);
+        tvGreetingName.setText(currentUser.getFirstName());
         changeDesignTime();
     }
 
@@ -56,6 +67,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void initComponent() {
+        helperDB = new HelperDB(requireContext());
         tvGreetingTime=getView().findViewById(R.id.tvGreetingTime);
         tvGreetingName=getView().findViewById(R.id.tvGreetingName);
         tvDailyInspiration=getView().findViewById(R.id.tvDailyInspiration);

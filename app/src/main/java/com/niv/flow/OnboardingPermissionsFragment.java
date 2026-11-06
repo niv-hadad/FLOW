@@ -31,6 +31,7 @@ public class OnboardingPermissionsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(requireActivity(), AuthActivity.class);
+                intent.putExtra("startWithSignup", 1);
                 startActivity(intent);
             }
         });

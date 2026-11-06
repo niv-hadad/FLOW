@@ -1,5 +1,6 @@
 package com.niv.flow;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,16 +13,21 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.niv.flow.adapters.ViewPagerAdapter;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 public class OnboardingActivity extends AppCompatActivity {
     ViewPager2 vpOnboarding;
     TabLayout tabIndicator;
+
+    ChipGroup cgDaysOfWeek, cgHoursOfDay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +84,6 @@ public class OnboardingActivity extends AppCompatActivity {
     }
 
     private void updateDots(int selectedPosition) {
-
         for (int i = 0; i < tabIndicator.getTabCount(); i++) {
 
             TabLayout.Tab tab = tabIndicator.getTabAt(i);

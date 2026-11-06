@@ -24,7 +24,12 @@ public class AuthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
         initComponent();
-        getSupportFragmentManager().beginTransaction().replace(R.id.authFragmentContainer,loginFragment).commit();
+        int startWithSignup = getIntent().getIntExtra("startWithSignup", 0);
+        if (startWithSignup==1) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.authFragmentContainer,registerFragment).commit();
+            changeAuth();
+        } else
+            getSupportFragmentManager().beginTransaction().replace(R.id.authFragmentContainer,loginFragment).commit();
         tvToggleAuthClickable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

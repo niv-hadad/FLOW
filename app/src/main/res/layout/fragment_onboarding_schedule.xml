@@ -66,6 +66,7 @@
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSun"
+            android:tag="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
@@ -84,6 +85,7 @@
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipMon"
+            android:tag="2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
@@ -102,6 +104,7 @@
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipTue"
+            android:tag="3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
@@ -120,6 +123,7 @@
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipWed"
+            android:tag="4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
@@ -138,6 +142,7 @@
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipThu"
+            android:tag="5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="36dp"
@@ -157,6 +162,7 @@
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipFri"
+            android:tag="6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
@@ -175,6 +181,7 @@
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSat"
+            android:tag="7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
@@ -217,6 +224,7 @@
         <com.google.android.material.chip.Chip
             android:id="@+id/chipMorning"
             android:layout_width="match_parent"
+            android:tag="9"
             android:layout_height="58dp"
             android:checkable="true"
             android:fontFamily="@font/inter_medium"
@@ -233,6 +241,7 @@
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipAfternoon"
+            android:tag="14"
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:checkable="true"
@@ -250,6 +259,7 @@
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipEvening"
+            android:tag="19"
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:checkable="true"
@@ -267,6 +277,7 @@
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipNight"
+            android:tag="23"
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:checkable="true"
