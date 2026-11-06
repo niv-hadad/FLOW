@@ -1,17 +1,290 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".HomeFragment">
+    android:paddingStart="20dp"
+    android:paddingTop="70dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="20dp"
+    tools:context=".ProfileFragment">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvFullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:text="Profile" />
+        android:fontFamily="@font/inter_bold"
+        android:text="Niv Hadad"
+        android:textColor="#25382D"
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-6dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="nivh2205@gmail.com"
+        android:textColor="#25382D"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvDaysInFlow"
+            android:layout_width="175dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="15dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#8A9A86"
+            app:strokeWidth="1.25dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="18dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="18dp">
+
+                <ImageView
+                    android:id="@+id/ivDaysInFlowBackground"
+                    android:layout_width="175dp"
+                    android:layout_height="54dp"
+                    android:layout_gravity="end"
+                    android:paddingRight="55dp"
+                    android:src="@drawable/calendar_icon"
+                    app:tint="#718D77">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/tvDaysInFlowTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
+                    android:paddingLeft="5dp"
+                    android:text="Flowing for"
+                    android:textColor="#25382D"
+                    android:textSize="17sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tvDaysInFlowSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="-5dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:paddingLeft="5dp"
+                    android:text="24 days"
+                    android:textColor="#25382D"
+                    android:textSize="22sp">
+
+                </TextView>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvFlowState"
+            android:layout_width="175dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="15dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#8A9A86"
+            app:strokeWidth="1.25dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="18dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="18dp">
+
+                <ImageView
+                    android:id="@+id/ivFlowStateBackground"
+                    android:layout_width="175dp"
+                    android:layout_height="54dp"
+                    android:layout_gravity="end"
+                    android:paddingRight="50dp"
+                    android:src="@drawable/inifinity_icon"
+                    app:tint="#718D77">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/tvFlowStateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
+                    android:paddingLeft="5dp"
+                    android:text="In Flow State for"
+                    android:textColor="#25382D"
+                    android:textSize="17sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tvFlowStateSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-5dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:paddingLeft="5dp"
+                    android:text="14 days"
+                    android:textColor="#25382D"
+                    android:textSize="22sp">
+
+                </TextView>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvSageReflection"
+        android:layout_width="362dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="15dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="1.25dp"
+        app:strokeColor="#8A9A86"
+        app:strokeWidth="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingStart="18dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="18dp">
+
+            <ImageView
+                android:id="@+id/ivSageReflectionIcon"
+                android:layout_width="56dp"
+                android:layout_height="55dp"
+                android:layout_gravity="end"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sage_calm_icon"
+                app:tint="#718D77">
+
+            </ImageView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvSageReflectionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_bold"
+                    android:paddingLeft="5dp"
+                    android:text="Sage's Weekly Reflection"
+                    android:textColor="#25382D"
+                    android:textSize="20sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tvSageReflectionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
+                    android:paddingLeft="5dp"
+                    android:text="Niv, logging your win about 'speaking up in the meeting' shows incredible growth. You are actively mastering your stress triggers. Keep thriving!"
+                    android:textColor="#25382D"
+                    android:textSize="15sp">
+
+                </TextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/swSmartReminders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/inter_semibold"
+        android:paddingLeft="5dp"
+        android:text="Smart Reminders"
+        android:textColor="#25382D"
+        android:textSize="20sp"
+        app:switchPadding="130dp"
+        app:thumbTint="@color/settings_switch_thumb_colors"
+        app:trackDecorationTint="#8FA893"
+        app:trackTint="@color/settings_switch_track_colors">
+
+    </com.google.android.material.materialswitch.MaterialSwitch>
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/swDailyInspiration"
+        android:layout_width="359dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
+        android:paddingLeft="5dp"
+        android:text="Daily Inspiration"
+        android:textColor="#25382D"
+        android:textSize="20sp"
+        app:switchPadding="130dp"
+        app:thumbTint="@color/settings_switch_thumb_colors"
+        app:trackDecorationTint="#8FA893"
+        app:trackTint="@color/settings_switch_track_colors">
+
+    </com.google.android.material.materialswitch.MaterialSwitch>
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/swDailyWinReminder"
+        android:layout_width="359dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
+        android:paddingLeft="5dp"
+        android:text="Daily Win Reminder"
+        android:textColor="#25382D"
+        android:textSize="20sp"
+        app:switchPadding="100dp"
+        app:thumbTint="@color/settings_switch_thumb_colors"
+        app:trackDecorationTint="#8FA893"
+        app:trackTint="@color/settings_switch_track_colors">
+
+    </com.google.android.material.materialswitch.MaterialSwitch>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogout"
+        android:layout_width="367dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="110dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Log Out"
+        android:textColor="#566B5C"
+        android:textSize="20sp"
+        app:backgroundTint="#FFFFFF"
+        app:cornerRadius="12dp"
+        app:strokeColor="#DDE5DC"
+        app:strokeWidth="2dp">
+
+    </com.google.android.material.button.MaterialButton>
 </LinearLayout>

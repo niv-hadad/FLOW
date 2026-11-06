@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:paddingStart="20dp"
+    android:paddingTop="90dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="20dp"
+    android:orientation="vertical"
+    tools:context=".OnboardingScheduleFragment">
+
+
+    <ImageView
+        android:id="@+id/ivScheduleIllustration"
+        android:layout_width="371dp"
+        android:layout_height="158dp"
+        android:src="@drawable/onboarding_schedule_icon"
+        app:tint="#718D77" />
+
+    <TextView
+        android:id="@+id/tvScheduleTitle"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Support When It Matters"
+        android:textAlignment="center"
+        android:textColor="#25382D"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tvScheduleSubtitle"
+        android:layout_width="378dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/inter_regular"
+        android:lineSpacingExtra="1.25dp"
+        android:text="Let us know when your days get demanding, so we can offer support at the right moment."
+        android:textAlignment="center"
+        android:textColor="#566B5C"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvDaysLabel"
+        android:layout_width="383dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/inter_bold"
+        android:lineSpacingExtra="1.25dp"
+        android:text="Which days are usually the most stressful?"
+        android:textAlignment="center"
+        android:textColor="#566B5C"
+        android:textSize="17sp" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cgDaysOfWeek"
+        android:layout_width="238dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="6dp"
+        app:chipSpacingHorizontal="4dp"
+        app:chipSpacingVertical="-7dp">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipSun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:fontFamily="@font/inter_medium"
+            android:minWidth="48dp"
+            android:text="Sun"
+            android:textAlignment="center"
+            android:textColor="#25382D"
+            android:textSize="12sp"
+            app:checkedIconEnabled="false"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/chip_background_colors"
+            app:chipCornerRadius="26dp"
+            app:chipStrokeColor="@color/chip_stroke_colors"
+            app:chipStrokeWidth="1.25dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:fontFamily="@font/inter_medium"
+            android:minWidth="48dp"
+            android:text="Mon"
+            android:textAlignment="center"
+            android:textColor="#25382D"
+            android:textSize="12sp"
+            app:checkedIconEnabled="false"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/chip_background_colors"
+            app:chipCornerRadius="26dp"
+            app:chipStrokeColor="@color/chip_stroke_colors"
+            app:chipStrokeWidth="1.25dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipTue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:fontFamily="@font/inter_medium"
+            android:minWidth="48dp"
+            android:text="Tue"
+            android:textAlignment="center"
+            android:textColor="#25382D"
+            android:textSize="12sp"
+            app:checkedIconEnabled="false"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/chip_background_colors"
+            app:chipCornerRadius="26dp"
+            app:chipStrokeColor="@color/chip_stroke_colors"
+            app:chipStrokeWidth="1.25dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipWed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:fontFamily="@font/inter_medium"
+            android:minWidth="48dp"
+            android:text="Wed"
+            android:textAlignment="center"
+            android:textColor="#25382D"
+            android:textSize="12sp"
+            app:checkedIconEnabled="false"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/chip_background_colors"
+            app:chipCornerRadius="26dp"
+            app:chipStrokeColor="@color/chip_stroke_colors"
+            app:chipStrokeWidth="1.25dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipThu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:checkable="true"
+            android:fontFamily="@font/inter_medium"
+            android:minWidth="48dp"
+            android:text="Thu"
+            android:textAlignment="center"
+            android:textColor="#25382D"
+            android:textSize="12sp"
+            app:checkedIconEnabled="false"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/chip_background_colors"
+            app:chipCornerRadius="26dp"
+            app:chipStrokeColor="@color/chip_stroke_colors"
+            app:chipStrokeWidth="1.25dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipFri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:fontFamily="@font/inter_medium"
+            android:minWidth="48dp"
+            android:text="Fri"
+            android:textAlignment="center"
+            android:textColor="#25382D"
+            android:textSize="12sp"
+            app:checkedIconEnabled="false"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/chip_background_colors"
+            app:chipCornerRadius="26dp"
+            app:chipStrokeColor="@color/chip_stroke_colors"
+            app:chipStrokeWidth="1.25dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipSat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:fontFamily="@font/inter_medium"
+            android:minWidth="48dp"
+            android:text="Sat"
+            android:textAlignment="center"
+            android:textColor="#25382D"
+            android:textSize="12sp"
+            app:checkedIconEnabled="false"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/chip_background_colors"
+            app:chipCornerRadius="26dp"
+            app:chipStrokeColor="@color/chip_stroke_colors"
+            app:chipStrokeWidth="1.25dp" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/tvHoursLabel"
+        android:layout_width="383dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/inter_bold"
+        android:lineSpacingExtra="1.25dp"
+        android:text="What times of day feel most challenging?"
+        android:textAlignment="center"
+        android:textColor="#566B5C"
+        android:textSize="17sp" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cgHoursOfDay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:chipSpacingHorizontal="4dp"
+        app:chipSpacingVertical="-8dp">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMorning"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:checkable="true"
+            android:fontFamily="@font/inter_medium"
+            android:text="Morning (06:00-12:00)"
+            android:textAlignment="center"
+            android:textColor="#25382D"
+            android:textSize="14sp"
+            app:checkedIconEnabled="false"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/chip_background_colors"
+            app:chipCornerRadius="12dp"
+            app:chipStrokeColor="@color/chip_stroke_colors"
+            app:chipStrokeWidth="1.25dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipAfternoon"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:checkable="true"
+            android:fontFamily="@font/inter_medium"
+            android:text="Afternoon (12:00-17:00)"
+            android:textAlignment="center"
+            android:textColor="#25382D"
+            android:textSize="14sp"
+            app:checkedIconEnabled="false"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/chip_background_colors"
+            app:chipCornerRadius="12dp"
+            app:chipStrokeColor="@color/chip_stroke_colors"
+            app:chipStrokeWidth="1.25dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipEvening"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:checkable="true"
+            android:fontFamily="@font/inter_medium"
+            android:text="Evening (17:00-21:00)"
+            android:textAlignment="center"
+            android:textColor="#25382D"
+            android:textSize="14sp"
+            app:checkedIconEnabled="false"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/chip_background_colors"
+            app:chipCornerRadius="12dp"
+            app:chipStrokeColor="@color/chip_stroke_colors"
+            app:chipStrokeWidth="1.25dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipNight"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:checkable="true"
+            android:fontFamily="@font/inter_medium"
+            android:text="Night (21:00-06:00)"
+            android:textAlignment="center"
+            android:textColor="#25382D"
+            android:textSize="14sp"
+            app:checkedIconEnabled="false"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/chip_background_colors"
+            app:chipCornerRadius="12dp"
+            app:chipStrokeColor="@color/chip_stroke_colors"
+            app:chipStrokeWidth="1.25dp" />
+    </com.google.android.material.chip.ChipGroup>
+</LinearLayout>

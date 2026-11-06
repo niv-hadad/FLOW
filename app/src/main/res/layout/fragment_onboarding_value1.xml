@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:layout_marginTop="16dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".OnboardingValue1Fragment">
+
+    <ImageView
+        android:id="@+id/ivValue1Illustration"
+        android:layout_width="429dp"
+        android:layout_height="176dp"
+        android:src="@drawable/onboarding_value1_icon"
+        app:tint="#718D77" />
+
+    <TextView
+        android:id="@+id/tvValue1Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Real-Time Relief &amp; Grounding"
+        android:textAlignment="center"
+        android:textColor="#25382D"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/tvValue1Description"
+        android:layout_width="308dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="A safe space to release overwhelming thoughts, practice guided breathing, and regain control in moments of stress."
+        android:textAlignment="center"
+        android:lineSpacingExtra="1.25dp"
+        android:textColor="#566B5C"
+        android:textSize="20sp" />
+</LinearLayout>

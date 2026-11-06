@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".OnboardingValue2Fragment">
+
+    <ImageView
+        android:id="@+id/ivValue2Illustration"
+        android:layout_width="429dp"
+        android:layout_height="176dp"
+        android:src="@drawable/onboarding_value2_icon"
+        app:tint="#718D77" />
+
+    <TextView
+        android:id="@+id/tvValue2Title"
+        android:layout_width="357dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Build Lasting Resilience"
+        android:textAlignment="center"
+        android:textColor="#25382D"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/tvValue2Description"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/inter_regular"
+        android:lineSpacingExtra="1.25dp"
+        android:text="Prepare for challenging situations with speech rehearsal, and celebrate small victories that remind you of your strength."
+        android:textAlignment="center"
+        android:textColor="#566B5C"
+        android:textSize="20sp" />
+</LinearLayout>

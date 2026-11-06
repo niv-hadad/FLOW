@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    tools:context=".OnboardingPermissionsFragment">
+
+    <ImageView
+        android:id="@+id/ivPermissionsIllustration"
+        android:layout_width="429dp"
+        android:layout_height="176dp"
+        android:src="@drawable/onboarding_permissions_icon"
+        app:tint="#718D77" />
+
+    <TextView
+        android:id="@+id/tvPermissionsTitle"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Timely Encouragement"
+        android:textAlignment="center"
+        android:textColor="#25382D"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/tvPermissionsDescription"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/inter_regular"
+        android:lineSpacingExtra="1.25dp"
+        android:text="When challenges arise, FLOW can send gentle reminders of your past wins right when you need them most."
+        android:textAlignment="center"
+        android:textColor="#566B5C"
+        android:textSize="20sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEnableNotifications"
+        android:layout_width="367dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Enable Notifications"
+        android:textColor="#566B5C"
+        android:textSize="20sp"
+        app:backgroundTint="#FFFFFF"
+        app:cornerRadius="12dp"
+        app:strokeColor="#8A9A86"
+        app:strokeWidth="2dp">
+
+    </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSkipPermissions"
+        android:layout_width="367dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Maybe Later"
+        android:textColor="#66776B"
+        android:textSize="20sp"
+        app:backgroundTint="#FFFFFF"
+        app:cornerRadius="12dp"
+        app:strokeColor="#50DDE5DC"
+        app:strokeWidth="2dp"/>
+</LinearLayout>
