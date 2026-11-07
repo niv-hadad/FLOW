@@ -1,6 +1,5 @@
 package com.niv.flow.models;
 
-import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -201,4 +200,3 @@ public class HelperDB extends SQLiteOpenHelper {
         return nextLogId;
     }
 }
-

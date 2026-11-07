@@ -9,13 +9,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.niv.flow.MainActivity;
-import com.niv.flow.ProgressFragment;
 import com.niv.flow.R;
 import com.niv.flow.models.Win;
 
 import java.util.ArrayList;
 
+// DESIGN PROTOTYPE:
+// Wins from database with RecyclerView integration not yet implemented.
 public class WinsRecyclerAdapter extends RecyclerView.Adapter<com.niv.flow.adapters.WinsRecyclerAdapter.MyViewHolder> {
 
     private ArrayList<Win> wins;
@@ -59,16 +59,13 @@ public class WinsRecyclerAdapter extends RecyclerView.Adapter<com.niv.flow.adapt
 
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.win_list_item, parent, false);
 
-
         return new MyViewHolder(itemView);
     }
-
 
     @Override
     public void onBindViewHolder(@NonNull com.niv.flow.adapters.WinsRecyclerAdapter.MyViewHolder holder, int position) {
         Win win = wins.get(position);
 
-        /* 4 change the information */
         holder.tvWinTitle.setText(win.getWinTitle());
         holder.tvWinDate.setText(win.getWinDate());
 

@@ -123,7 +123,7 @@
                     android:layout_height="54dp"
                     android:layout_gravity="end"
                     android:paddingRight="50dp"
-                    android:src="@drawable/inifinity_icon"
+                    android:src="@drawable/infinity_icon"
                     app:tint="#718D77">
 
                 </ImageView>

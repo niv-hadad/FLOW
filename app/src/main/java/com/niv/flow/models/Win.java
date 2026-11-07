@@ -1,9 +1,10 @@
 package com.niv.flow.models;
 
+// DESIGN PROTOTYPE:
+// Wins from database with RecyclerView integration not yet implemented.
 public class Win {
     String winTitle;
     String winDate;
-
 
     public Win(String winTitle, String winDate) {
         this.winTitle=winTitle;

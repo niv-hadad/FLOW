@@ -2,6 +2,8 @@ package com.niv.flow.models;
 
 import java.util.ArrayList;
 
+// DESIGN PROTOTYPE:
+// Wins from database with RecyclerView integration not yet implemented.
 public class Wins extends ArrayList<Win> {
     private static Wins instance;
 

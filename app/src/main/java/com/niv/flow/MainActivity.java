@@ -5,43 +5,37 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    ProfileFragment profileFragment = new ProfileFragment();
-    HomeFragment homeFragment = new HomeFragment();
-    ProgressFragment progressFragment = new ProgressFragment();
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         initComponent();
-        bottomNavigationView.setSelectedItemId(R.id.menu_home);
         bottomNavigationView.setItemActiveIndicatorEnabled(false);
-        getSupportFragmentManager().beginTransaction().replace(R.id.navHostFragment,homeFragment).commit();
+        if (savedInstanceState==null) {
+            bottomNavigationView.setSelectedItemId(R.id.menu_home);
+            getSupportFragmentManager().beginTransaction().replace(R.id.navHostFragment, new HomeFragment()).commit();
+        }
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 int itemId = menuItem.getItemId();
-                if (itemId==R.id.menu_profile) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.navHostFragment,profileFragment).commit();
+                if (itemId == R.id.menu_profile) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.navHostFragment, new ProfileFragment()).commit();
                     return true;
-                } else if (itemId==R.id.menu_home) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.navHostFragment,homeFragment).commit();
+                } else if (itemId == R.id.menu_home) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.navHostFragment, new HomeFragment()).commit();
                     return true;
-                } else if (itemId==R.id.menu_progress) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.navHostFragment,progressFragment).commit();
+                } else if (itemId == R.id.menu_progress) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.navHostFragment, new ProgressFragment()).commit();
                     return true;
                 }
                 return false;
@@ -50,6 +44,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initComponent() {
-        bottomNavigationView=findViewById(R.id.bottomNavigation);
+        bottomNavigationView = findViewById(R.id.bottomNavigation);
     }
 }

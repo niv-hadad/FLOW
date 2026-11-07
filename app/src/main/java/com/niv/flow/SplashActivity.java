@@ -5,13 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.niv.flow.models.HelperDB;
 
@@ -33,6 +28,7 @@ public class SplashActivity extends AppCompatActivity {
                     public void run() {
                         Intent intent = new Intent(SplashActivity.this, AuthActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                 }, 2000);
             } else {
@@ -41,6 +37,7 @@ public class SplashActivity extends AppCompatActivity {
                     public void run() {
                         Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                 }, 2000);
             }
@@ -50,6 +47,7 @@ public class SplashActivity extends AppCompatActivity {
                 public void run() {
                     Intent intent = new Intent(SplashActivity.this, OnboardingActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             }, 2000);
         }

@@ -12,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.niv.flow.adapters.WinsRecyclerAdapter;
 import com.niv.flow.models.Win;
 import com.niv.flow.models.Wins;
@@ -29,6 +28,8 @@ public class ProgressFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        // DESIGN PROTOTYPE:
+        // Wins from database with RecyclerView integration not yet implemented.
         wins = Wins.getInstance();
         wins.add(new Win("Completed a workout", "Apr 24, 2025"));
         wins.add(new Win("Kept a consistent sleep schedule", "Apr 21, 2025"));

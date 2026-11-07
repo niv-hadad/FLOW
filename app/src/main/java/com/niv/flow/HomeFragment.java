@@ -14,12 +14,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.niv.flow.models.DailyInspiration;
 import com.niv.flow.models.HelperDB;
 import com.niv.flow.models.User;
 
 import java.time.LocalTime;
 
 public class HomeFragment extends Fragment {
+    DailyInspiration dailyInspiration;
     HelperDB helperDB;
     TextView tvGreetingTime, tvGreetingName, tvDailyInspiration;
     View homeScreen;
@@ -38,6 +40,11 @@ public class HomeFragment extends Fragment {
         String currentUserId = sharedPreferences.getString("current_user", "");
         User currentUser = helperDB.getUserById(currentUserId);
         tvGreetingName.setText(currentUser.getFirstName());
+        if (sharedPreferences.getBoolean("daily_inspiration", true))
+            tvDailyInspiration.setVisibility(View.VISIBLE);
+        else
+            tvDailyInspiration.setVisibility(View.INVISIBLE);
+        tvDailyInspiration.setText(dailyInspiration.getDailyInspiration());
         changeDesignTime();
     }
 
@@ -68,9 +75,10 @@ public class HomeFragment extends Fragment {
 
     private void initComponent() {
         helperDB = new HelperDB(requireContext());
-        tvGreetingTime=getView().findViewById(R.id.tvGreetingTime);
-        tvGreetingName=getView().findViewById(R.id.tvGreetingName);
-        tvDailyInspiration=getView().findViewById(R.id.tvDailyInspiration);
-        homeScreen=getView().findViewById(R.id.homeScreen);
+        dailyInspiration = new DailyInspiration();
+        tvGreetingTime = getView().findViewById(R.id.tvGreetingTime);
+        tvGreetingName = getView().findViewById(R.id.tvGreetingName);
+        tvDailyInspiration = getView().findViewById(R.id.tvDailyInspiration);
+        homeScreen = getView().findViewById(R.id.homeScreen);
     }
 }
