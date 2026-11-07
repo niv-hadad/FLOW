@@ -1,6 +1,6 @@
 # FLOW
 
-<img src="app/src/main/res/drawable/logo_splash.png" alt="FLOW logo" width="160">
+<img src="app/src/main/res/drawable/logo_full.png" alt="FLOW logo" width="160">
 
 A calm space for managing stress, building confidence, and recognizing personal growth.
 
