@@ -7,13 +7,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".OnboardingValue2Fragment">
+    tools:context="com.niv.flow.ui.onboarding.OnboardingValue2Fragment">
 
     <ImageView
         android:id="@+id/ivValue2Illustration"
         android:layout_width="429dp"
         android:layout_height="176dp"
-        android:src="@drawable/onboarding_value2_icon"
+        android:src="@drawable/ill_onboarding_resilience"
         app:tint="#718D77" />
 
     <TextView

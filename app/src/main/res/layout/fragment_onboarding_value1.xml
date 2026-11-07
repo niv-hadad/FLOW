@@ -8,13 +8,13 @@
     android:layout_marginTop="16dp"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".OnboardingValue1Fragment">
+    tools:context="com.niv.flow.ui.onboarding.OnboardingValue1Fragment">
 
     <ImageView
         android:id="@+id/ivValue1Illustration"
         android:layout_width="429dp"
         android:layout_height="176dp"
-        android:src="@drawable/onboarding_value1_icon"
+        android:src="@drawable/ill_onboarding_grounding"
         app:tint="#718D77" />
 
     <TextView

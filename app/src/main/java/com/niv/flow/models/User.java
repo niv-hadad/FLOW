@@ -12,7 +12,9 @@ public class User {
     private String weeklyReflection;
     private String lastReflectionDate;
 
-    public User(String userId, String firstName, String lastName, String email, String password, String createdAt, int flowState, String lastWinDate, String weeklyReflection, String lastReflectionDate) {
+    public User(String userId, String firstName, String lastName, String email, String password,
+                String createdAt, int flowState, String lastWinDate, String weeklyReflection,
+                String lastReflectionDate) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -35,7 +37,7 @@ public class User {
         this.flowState = 0;
         this.lastWinDate = null;
         this.weeklyReflection = null;
-        this.lastReflectionDate =  null;
+        this.lastReflectionDate = null;
     }
 
     public String getUserId() {

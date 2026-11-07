@@ -7,7 +7,7 @@
     android:background="#FFFFFF"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".OnboardingActivity">
+    tools:context="com.niv.flow.ui.onboarding.OnboardingActivity">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vpOnboarding"

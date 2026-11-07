@@ -10,7 +10,7 @@
     android:paddingTop="70dp"
     android:paddingEnd="20dp"
     android:paddingBottom="20dp"
-    tools:context=".ProfileFragment">
+    tools:context="com.niv.flow.ui.main.ProfileFragment">
 
     <TextView
         android:id="@+id/tvFullName"
@@ -63,7 +63,7 @@
                     android:layout_height="54dp"
                     android:layout_gravity="end"
                     android:paddingRight="55dp"
-                    android:src="@drawable/calendar_icon"
+                    android:src="@drawable/ic_calendar"
                     app:tint="#718D77">
 
                 </ImageView>
@@ -123,7 +123,7 @@
                     android:layout_height="54dp"
                     android:layout_gravity="end"
                     android:paddingRight="50dp"
-                    android:src="@drawable/infinity_icon"
+                    android:src="@drawable/ic_infinity"
                     app:tint="#718D77">
 
                 </ImageView>
@@ -184,7 +184,7 @@
                 android:layout_height="55dp"
                 android:layout_gravity="end"
                 android:scaleType="centerCrop"
-                android:src="@drawable/sage_calm_icon"
+                android:src="@drawable/ic_sage_calm"
                 app:tint="#718D77">
 
             </ImageView>

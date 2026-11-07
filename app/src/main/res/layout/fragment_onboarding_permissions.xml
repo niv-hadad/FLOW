@@ -7,13 +7,13 @@
     android:orientation="vertical"
     android:background="#FFFFFF"
     android:gravity="center"
-    tools:context=".OnboardingPermissionsFragment">
+    tools:context="com.niv.flow.ui.onboarding.OnboardingPermissionsFragment">
 
     <ImageView
         android:id="@+id/ivPermissionsIllustration"
         android:layout_width="429dp"
         android:layout_height="176dp"
-        android:src="@drawable/onboarding_permissions_icon"
+        android:src="@drawable/ic_onboarding_permissions"
         app:tint="#718D77" />
 
     <TextView

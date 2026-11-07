@@ -8,12 +8,16 @@ import android.os.Looper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.niv.flow.models.HelperDB;
+import com.niv.flow.data.HelperDB;
+import com.niv.flow.ui.auth.AuthActivity;
+import com.niv.flow.ui.main.MainActivity;
+import com.niv.flow.ui.onboarding.OnboardingActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
     HelperDB helperDB;
     Handler handler = new Handler(Looper.getMainLooper());
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +56,7 @@ public class SplashActivity extends AppCompatActivity {
             }, 2000);
         }
     }
+
     private void initComponent() {
         helperDB = new HelperDB(this);
     }

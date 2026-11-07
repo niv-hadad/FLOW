@@ -7,8 +7,8 @@ public class Win {
     String winDate;
 
     public Win(String winTitle, String winDate) {
-        this.winTitle=winTitle;
-        this.winDate=winDate;
+        this.winTitle = winTitle;
+        this.winDate = winDate;
     }
 
     public Win() {

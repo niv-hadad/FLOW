@@ -9,7 +9,7 @@
     android:paddingTop="60dp"
     android:paddingStart="25dp"
     android:paddingEnd="7dp"
-    tools:context=".ProgressFragment">
+    tools:context="com.niv.flow.ui.main.ProgressFragment">
 
     <TextView
         android:id="@+id/tvProgressHeader"
@@ -50,7 +50,7 @@
                 android:id="@+id/ivAddWinIcon"
                 android:layout_width="150dp"
                 android:layout_height="70dp"
-                android:src="@drawable/progress_add_win_icon"
+                android:src="@drawable/ic_progress_add_win"
                 app:tint="#718D77">
 
             </ImageView>

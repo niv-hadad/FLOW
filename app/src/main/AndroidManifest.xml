@@ -22,15 +22,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.niv.flow.ui.main.MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".OnboardingActivity"
+            android:name="com.niv.flow.ui.onboarding.OnboardingActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".AuthActivity"
+            android:name="com.niv.flow.ui.auth.AuthActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

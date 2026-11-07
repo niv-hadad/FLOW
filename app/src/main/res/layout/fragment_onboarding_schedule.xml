@@ -10,14 +10,14 @@
     android:paddingEnd="20dp"
     android:paddingBottom="20dp"
     android:orientation="vertical"
-    tools:context=".OnboardingScheduleFragment">
+    tools:context="com.niv.flow.ui.onboarding.OnboardingScheduleFragment">
 
 
     <ImageView
         android:id="@+id/ivScheduleIllustration"
         android:layout_width="371dp"
         android:layout_height="158dp"
-        android:src="@drawable/onboarding_schedule_icon"
+        android:src="@drawable/ic_onboarding_schedule"
         app:tint="#718D77" />
 
     <TextView

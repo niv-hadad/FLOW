@@ -3,19 +3,19 @@
 
     <item
         android:id="@+id/menu_profile"
-        android:icon="@drawable/bottom_navigation_profile_icon"
+        android:icon="@drawable/ic_nav_profile"
         android:title="Profile">
     </item>
 
     <item
         android:id="@+id/menu_home"
-        android:icon="@drawable/bottom_navigation_home_icon"
+        android:icon="@drawable/ic_nav_home"
         android:title="Home">
     </item>
 
     <item
         android:id="@+id/menu_progress"
-        android:icon="@drawable/bottom_navigation_progress_icon"
+        android:icon="@drawable/ic_nav_progress"
         android:title="Progress">
     </item>
 </menu>

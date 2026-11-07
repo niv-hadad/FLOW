@@ -14,7 +14,7 @@
         android:id="@+id/ivSplashLogo"
         android:layout_width="303dp"
         android:layout_height="295dp"
-        android:src="@drawable/splash_screen_logo">
+        android:src="@drawable/logo_splash">
 
     </ImageView>
 

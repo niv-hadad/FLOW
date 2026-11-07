@@ -5,13 +5,13 @@
     android:id="@+id/homeScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/morning_background"
+    android:background="@drawable/bg_morning"
     android:orientation="vertical"
     android:paddingStart="20dp"
     android:paddingTop="60dp"
     android:paddingEnd="20dp"
     android:paddingBottom="20dp"
-    tools:context=".HomeFragment">
+    tools:context="com.niv.flow.ui.main.HomeFragment">
 
     <TextView
         android:id="@+id/tvGreetingTime"
@@ -71,7 +71,7 @@
                 android:id="@+id/ivBreathBtnIcon"
                 android:layout_width="179dp"
                 android:layout_height="145dp"
-                android:src="@drawable/take_a_breath_icon"
+                android:src="@drawable/ic_take_a_breath"
                 app:tint="#718D77">
 
             </ImageView>
@@ -175,7 +175,7 @@
                     android:layout_height="66dp"
                     android:layout_gravity="center"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/release_graphic"
+                    android:src="@drawable/ill_release"
                     app:tint="#CDCDCD">
 
                 </ImageView>
@@ -223,7 +223,7 @@
                     android:layout_height="73dp"
                     android:layout_gravity="center"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/rehearse_graphic"
+                    android:src="@drawable/ill_rehearse"
                     app:tint="#CDCDCD">
 
                 </ImageView>
