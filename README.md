@@ -1,7 +1,7 @@
 # FLOW
 A calm space for managing stress, building confidence, and recognizing personal growth.
 
-<img src="app/src/main/res/drawable/logo_full.png" alt="FLOW logo" width="650">
+<img src="app/src/main/res/drawable/logo_full.png" alt="FLOW logo" width="750">
 
 ## About FLOW
 
