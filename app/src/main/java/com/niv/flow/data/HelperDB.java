@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.niv.flow.models.ActivityLog;
 import com.niv.flow.models.User;
+import com.niv.flow.models.Win;
+
+import java.util.ArrayList;
 
 public class HelperDB extends SQLiteOpenHelper {
     public static final String DB_FILE = "flow.db";
@@ -177,6 +180,17 @@ public class HelperDB extends SQLiteOpenHelper {
         db.close();
     }
 
+    private String generateLogId(SQLiteDatabase db) {
+        String nextLogId = "log_001";
+        Cursor cursor = db.rawQuery("SELECT MAX(CAST(SUBSTR(logId, 5) AS INTEGER)) FROM activity_logs", null);
+        if (cursor.moveToFirst() && !cursor.isNull(0)) {
+            int nextNumber = cursor.getInt(0) + 1;
+            nextLogId = String.format("log_%03d", nextNumber);
+        }
+        cursor.close();
+        return nextLogId;
+    }
+
     public void addActivityLog(ActivityLog activityLog) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -192,14 +206,47 @@ public class HelperDB extends SQLiteOpenHelper {
         db.close();
     }
 
-    private String generateLogId(SQLiteDatabase db) {
-        String nextLogId = "log_001";
-        Cursor cursor = db.rawQuery("SELECT MAX(CAST(SUBSTR(logId, 5) AS INTEGER)) FROM activity_logs", null);
+    private String generateWinId(SQLiteDatabase db) {
+        String nextWinId = "win_001";
+        Cursor cursor = db.rawQuery("SELECT MAX(CAST(SUBSTR(winId, 5) AS INTEGER)) FROM wins", null);
         if (cursor.moveToFirst() && !cursor.isNull(0)) {
             int nextNumber = cursor.getInt(0) + 1;
-            nextLogId = String.format("log_%03d", nextNumber);
+            nextWinId = String.format("win_%03d", nextNumber);
         }
         cursor.close();
-        return nextLogId;
+        return nextWinId;
+    }
+
+    public void addWin(Win win) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(WIN_ID, generateWinId(db));
+        cv.put(USER_ID, win.getUserId());
+        cv.put(WIN_TITLE, win.getWinTitle());
+        cv.put(WIN_CONTENT, win.getWinContent());
+        cv.put(CREATED_AT, win.getCreatedAt());
+
+        db.insert(TABLE_WINS, null, cv);
+        db.close();
+    }
+
+    public ArrayList<Win> getWinsByUserId(String userId) {
+        ArrayList<Win> wins = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] arrArgs = {userId};
+        Cursor cursor = db.query(TABLE_WINS, null, USER_ID + "=?", arrArgs, null, null, CREATED_AT + " DESC");
+
+        while (cursor.moveToNext()) {
+            String winId = cursor.getString(cursor.getColumnIndexOrThrow(WIN_ID));
+            String winTitle = cursor.getString(cursor.getColumnIndexOrThrow(WIN_TITLE));
+            String winContent = cursor.getString(cursor.getColumnIndexOrThrow(WIN_CONTENT));
+            String createdAt = cursor.getString(cursor.getColumnIndexOrThrow(CREATED_AT));
+            Win win = new Win(winId, userId, winTitle, winContent, createdAt);
+            wins.add(win);
+        }
+        cursor.close();
+        db.close();
+        return wins;
     }
 }

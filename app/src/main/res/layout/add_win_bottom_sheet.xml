@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_bottomsheet"
+    android:gravity="center_horizontal"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Celebrate a Win"
+        android:textColor="#25382D"
+        android:textSize="30sp" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvWinContent"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        app:strokeColor="#8A9A86"
+        app:strokeWidth="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingStart="18dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="18dp">
+
+            <EditText
+                android:id="@+id/etDetailedWin"
+                android:layout_width="336dp"
+                android:layout_height="170dp"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="top"
+                android:hint="Write down what went well..."
+                android:inputType="textMultiLine"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textColor="#7A817C"
+                android:textColorHighlight="#407A817C"
+                android:textColorHint="#7A817C"
+                android:textSize="18sp">
+
+            </EditText>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancelWin"
+            android:layout_width="175dp"
+            android:layout_height="68dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Cancel"
+            android:textColor="#66776B"
+            android:textSize="20sp"
+            app:backgroundTint="#FFFFFF"
+            app:cornerRadius="12dp"
+            app:strokeColor="#50DDE5DC"
+            app:strokeWidth="2dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveWin"
+            android:layout_width="175dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="21dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Save"
+            android:textColor="#566B5C"
+            android:textSize="20sp"
+            app:backgroundTint="#FFFFFF"
+            app:cornerRadius="12dp"
+            app:strokeColor="#8A9A86"
+            app:strokeWidth="2dp">
+
+        </com.google.android.material.button.MaterialButton>
+
+
+    </LinearLayout>
+
+</LinearLayout>

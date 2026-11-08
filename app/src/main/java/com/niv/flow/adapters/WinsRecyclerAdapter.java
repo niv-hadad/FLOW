@@ -67,7 +67,7 @@ public class WinsRecyclerAdapter extends RecyclerView.Adapter<com.niv.flow.adapt
         Win win = wins.get(position);
 
         holder.tvWinTitle.setText(win.getWinTitle());
-        holder.tvWinDate.setText(win.getWinDate());
+        holder.tvWinDate.setText(win.getCreatedAt());
 
     }
 

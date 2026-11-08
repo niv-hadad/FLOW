@@ -37,9 +37,9 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 public class ProfileFragment extends Fragment {
-    private SharedPreferences sharedPreferences;
-    private String pendingSetting;
-    private MaterialSwitch pendingSwitch;
+    SharedPreferences sharedPreferences;
+    String pendingSetting;
+    MaterialSwitch pendingSwitch;
     HelperDB helperDB;
     MaterialSwitch swSmartReminders, swDailyInspiration, swDailyWinReminder;
     TextView tvName, tvEmail, tvDaysInFlow, tvFlowState, tvWeeklyReflection;

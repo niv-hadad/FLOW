@@ -33,6 +33,7 @@
         android:layout_gravity="end"
         android:clickable="true"
         app:cardBackgroundColor="#FFFFFF"
+        app:rippleColor="#FFFFFF"
         app:cardElevation="0dp"
         app:strokeColor="#FFFFFF">
 

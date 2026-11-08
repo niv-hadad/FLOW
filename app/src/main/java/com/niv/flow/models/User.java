@@ -28,7 +28,6 @@ public class User {
     }
 
     public User(String firstName, String lastName, String email, String password, String createdAt) {
-        this.userId = "Temp";
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
