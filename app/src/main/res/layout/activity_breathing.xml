@@ -38,7 +38,7 @@
     <com.niv.flow.ui.views.BreathingCircleView
         android:id="@+id/viewBreathingCircle"
         android:layout_width="411dp"
-        android:layout_height="660dp"
+        android:layout_height="607dp"
         android:layout_gravity="center"
         android:elevation="20dp">
 
@@ -46,24 +46,38 @@
 
     <TextView
         android:id="@+id/tvBreathingInstructions"
-        android:layout_width="350dp"
-        android:layout_height="24dp"
+        android:layout_width="360dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="-30dp"
         android:fontFamily="@font/inter_semibold"
         android:gravity="center"
         android:letterSpacing="0.02"
-        android:text="Press and hold to inhale"
+        android:text="Press and hold to inhale..."
         android:textColor="#F1F6F5"
         android:textSize="21sp" />
 
     <TextView
         android:id="@+id/tvCountdownTimer"
-        android:layout_marginTop="10dp"
-        android:layout_width="350dp"
+        android:layout_width="360dp"
         android:layout_height="63dp"
+        android:layout_marginTop="-10dp"
         android:fontFamily="@font/inter_semibold"
         android:gravity="center"
-        android:text="3"
+        android:text="4"
         android:textColor="#B8DBDE"
-        android:textSize="46sp" />
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/tvBreathingMessage"
+        android:layout_width="360dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center"
+        android:letterSpacing="0.02"
+        android:text="There's no rush. You're doing great."
+        android:textColor="#A3BBC5"
+        android:textSize="13sp" />
+
 
 </LinearLayout>

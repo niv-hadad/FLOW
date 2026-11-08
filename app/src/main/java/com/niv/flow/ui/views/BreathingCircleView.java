@@ -31,19 +31,20 @@ import com.niv.flow.utils.BreathingState;
 
 public class BreathingCircleView extends View {
 
-    private static final long ANIMATION_DURATION = 4000;
     private static final int MAX_RIPPLE_ALPHA = 90;
     private static final int IDLE_FILL = Color.parseColor("#294A56");
-    private static final int EXPANDED_FILL = Color.parseColor("#355F6B");
+    private static final int EXPANDED_FILL = Color.parseColor("#477F8D");
 
     private static final int IDLE_STROKE = Color.parseColor("#7FAEB4");
-    private static final int EXPANDED_STROKE = Color.parseColor("#A9D5DB");
+    private static final int EXPANDED_STROKE = Color.parseColor("#C0EBEF");
 
     private static final int RIPPLE_COLOR = Color.parseColor("#9ED3DA");
 
     private BreathingState breathingState;
     private ValueAnimator animator;
     private ArgbEvaluator colorEvaluator;
+
+    private BreathingListener listener;
 
     private float density;
     private float minRadius;
@@ -66,22 +67,28 @@ public class BreathingCircleView extends View {
 
     public BreathingCircleView(Context context) {
         super(context);
+        this.listener=null;
         init();
     }
 
-    public BreathingCircleView(
-            Context context,
-            @Nullable AttributeSet attrs) {
+    public BreathingCircleView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        this.listener=null;
         init();
     }
 
-    public BreathingCircleView(
-            Context context,
-            @Nullable AttributeSet attrs,
-            int defStyleAttr) {
+    public BreathingCircleView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        this.listener=null;
         init();
+    }
+
+    public interface BreathingListener {
+        public void onStateChanged(BreathingState previousState, BreathingState newState);
+        public void onBreathingCycleCompleted();
+    }
+    public void setBreathingListener(BreathingListener listener) {
+        this.listener = listener;
     }
 
     @Override
@@ -115,10 +122,11 @@ public class BreathingCircleView extends View {
     }
 
     private void startInhaleAnimation() {
+        listener.onStateChanged(IDLE,INHALING);
         breathingState = INHALING;
         animator = ValueAnimator.ofFloat(minRadius, maxRadius);
         animator.setInterpolator(new LinearInterpolator());
-        animator.setDuration(ANIMATION_DURATION);
+        animator.setDuration(4000);
 
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                     @Override
@@ -139,6 +147,7 @@ public class BreathingCircleView extends View {
             public void onAnimationEnd(Animator animation) {
                 if (!cancelled) {
                     breathingState = HOLDING;
+                    listener.onStateChanged(INHALING,HOLDING);
                 }
             }
         });
@@ -146,7 +155,17 @@ public class BreathingCircleView extends View {
     }
 
     private void startReturnAnimation() {
-        boolean showRipple = (breathingState == HOLDING);
+        boolean showRipple;
+        long returnDuration=(long)(4000*((currentRadius-minRadius)/(maxRadius-minRadius)));
+        if (breathingState==HOLDING) {
+            showRipple=true;
+            returnDuration=4000;
+            listener.onStateChanged(HOLDING,RETURNING);
+        } else {
+            showRipple = false;
+            if (breathingState==INHALING)
+                listener.onStateChanged(INHALING,RETURNING);
+        }
         breathingState = RETURNING;
 
         rippleAlpha1 = 0;
@@ -154,7 +173,7 @@ public class BreathingCircleView extends View {
 
         animator = ValueAnimator.ofFloat(currentRadius, minRadius);
         animator.setInterpolator(new LinearInterpolator());
-        animator.setDuration(ANIMATION_DURATION);
+        animator.setDuration(returnDuration);
 
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                     @Override
@@ -189,20 +208,15 @@ public class BreathingCircleView extends View {
                 });
 
         animator.addListener(new AnimatorListenerAdapter() {
-            boolean cancelled = false;
-            @Override
-            public void onAnimationCancel(Animator animation) {
-                cancelled = true;
-            }
             @Override
             public void onAnimationEnd(Animator animation) {
-
-                if (!cancelled) {
                     breathingState = IDLE;
                     rippleAlpha1 = 0;
                     rippleAlpha2 = 0;
                     invalidate();
-                }
+                    listener.onStateChanged(RETURNING,IDLE);
+                    if (showRipple)
+                        listener.onBreathingCycleCompleted();
             }
         });
         animator.start();
@@ -217,7 +231,7 @@ public class BreathingCircleView extends View {
         currentRadius = minRadius;
 
         minStrokeWidth = 3 * density;
-        maxStrokeWidth = 4 * density;
+        maxStrokeWidth = 5 * density;
 
         rippleRadius1 = maxRadius;
         rippleRadius2 = maxRadius;
@@ -253,10 +267,8 @@ public class BreathingCircleView extends View {
                         startInhaleAnimation();
                     }
                     return true;
-                } else if (action == ACTION_UP
-                        || action == ACTION_CANCEL) {
-                    if (breathingState == INHALING
-                            || breathingState == HOLDING) {
+                } else if (action == ACTION_UP || action == ACTION_CANCEL) {
+                    if (breathingState == INHALING || breathingState == HOLDING) {
                         animator.cancel();
                         startReturnAnimation();
                     }
