@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_breathing_gradient"
+    android:paddingHorizontal="28dp"
+    android:paddingVertical="55dp"
+    tools:context=".ui.BreathingActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnExitBreathing"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:backgroundTint="#122333"
+            android:src="@drawable/ic_close"
+            app:tint="#DFE9EB" />
+
+        <ImageButton
+            android:id="@+id/btnBreathingInfo"
+            android:layout_width="28dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="303dp"
+            android:backgroundTint="#122333"
+            android:src="@drawable/ic_infographic"
+            app:tint="#DFE9EB" />
+    </LinearLayout>
+
+    <com.niv.flow.ui.views.BreathingCircleView
+        android:id="@+id/viewBreathingCircle"
+        android:layout_width="411dp"
+        android:layout_height="660dp"
+        android:layout_gravity="center"
+        android:elevation="20dp">
+
+    </com.niv.flow.ui.views.BreathingCircleView>
+
+    <TextView
+        android:id="@+id/tvBreathingInstructions"
+        android:layout_width="350dp"
+        android:layout_height="24dp"
+        android:fontFamily="@font/inter_semibold"
+        android:gravity="center"
+        android:letterSpacing="0.02"
+        android:text="Press and hold to inhale"
+        android:textColor="#F1F6F5"
+        android:textSize="21sp" />
+
+    <TextView
+        android:id="@+id/tvCountdownTimer"
+        android:layout_marginTop="10dp"
+        android:layout_width="350dp"
+        android:layout_height="63dp"
+        android:fontFamily="@font/inter_semibold"
+        android:gravity="center"
+        android:text="3"
+        android:textColor="#B8DBDE"
+        android:textSize="46sp" />
+
+</LinearLayout>

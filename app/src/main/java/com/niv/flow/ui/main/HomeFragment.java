@@ -2,6 +2,7 @@ package com.niv.flow.ui.main;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,15 +14,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.card.MaterialCardView;
 import com.niv.flow.R;
 import com.niv.flow.data.HelperDB;
 import com.niv.flow.models.User;
+import com.niv.flow.ui.BreathingActivity;
+import com.niv.flow.ui.auth.AuthActivity;
 import com.niv.flow.utils.DailyInspiration;
 
 import java.time.LocalTime;
 
 public class HomeFragment extends Fragment {
     DailyInspiration dailyInspiration;
+    MaterialCardView btnTakeABreath;
     HelperDB helperDB;
     TextView tvGreetingTime, tvGreetingName, tvDailyInspiration;
     View homeScreen;
@@ -45,6 +50,14 @@ public class HomeFragment extends Fragment {
             tvDailyInspiration.setVisibility(View.INVISIBLE);
         tvDailyInspiration.setText(dailyInspiration.getDailyInspiration());
         changeDesignTime();
+
+        btnTakeABreath.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(requireActivity(), BreathingActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void changeDesignTime() {
@@ -79,5 +92,6 @@ public class HomeFragment extends Fragment {
         tvGreetingName = getView().findViewById(R.id.tvGreetingName);
         tvDailyInspiration = getView().findViewById(R.id.tvDailyInspiration);
         homeScreen = getView().findViewById(R.id.homeScreen);
+        btnTakeABreath = getView().findViewById(R.id.btnTakeABreath);
     }
 }
