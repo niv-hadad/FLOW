@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.niv.flow.R;
 import com.niv.flow.data.HelperDB;
 import com.niv.flow.models.ActivityLog;
+import com.niv.flow.ui.dialogs.BreathingInfoBottomSheet;
 import com.niv.flow.ui.main.MainActivity;
 import com.niv.flow.ui.views.BreathingCircleView;
 import com.niv.flow.utils.BreathingState;
@@ -32,7 +33,7 @@ public class BreathingActivity extends AppCompatActivity {
     HelperDB helperDB;
     TextView tvBreathingInstructions, tvCountdownTimer;
     CountDownTimer countDownTimer;
-    ImageButton btnExitBreathing;
+    ImageButton btnExitBreathing, btnBreathingInfo;
     BreathingCircleView breathingCircleView;
     ActivityLog activityLog;
     String currentUserId, createdAt;
@@ -84,9 +85,18 @@ public class BreathingActivity extends AppCompatActivity {
         btnExitBreathing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                countDownTimer.cancel();
+                if (countDownTimer!=null)
+                    countDownTimer.cancel();
                 Intent intent = new Intent(BreathingActivity.this, MainActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        btnBreathingInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BreathingInfoBottomSheet bottomSheet = new BreathingInfoBottomSheet();
+                bottomSheet.show(getSupportFragmentManager(), "BreathingInfoBottomSheet");
             }
         });
     }
@@ -112,6 +122,7 @@ public class BreathingActivity extends AppCompatActivity {
         tvBreathingInstructions = findViewById(R.id.tvBreathingInstructions);
         tvCountdownTimer = findViewById(R.id.tvCountdownTimer);
         btnExitBreathing = findViewById(R.id.btnExitBreathing);
+        btnBreathingInfo = findViewById(R.id.btnBreathingInfo);
         breathingCircleView = findViewById(R.id.viewBreathingCircle);
     }
 }

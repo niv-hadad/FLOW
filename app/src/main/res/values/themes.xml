@@ -8,4 +8,15 @@
     </style>
 
     <style name="Theme.FLOW" parent="Base.Theme.FLOW" />
+
+    <!-- Used only by BreathingInfoBottomSheet to preserve its custom outline. -->
+    <style name="ThemeOverlay.FLOW.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.FLOW.BottomSheet.Modal</item>
+    </style>
+
+    <style name="Widget.FLOW.BottomSheet.Modal" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="shapeAppearance">@null</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:background">@drawable/bg_breathing_info_bottom_sheet</item>
+    </style>
 </resources>
