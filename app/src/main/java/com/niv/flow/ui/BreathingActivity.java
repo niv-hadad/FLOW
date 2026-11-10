@@ -50,18 +50,18 @@ public class BreathingActivity extends AppCompatActivity {
             public void onStateChanged(BreathingState previousState, BreathingState newState) {
                 if (previousState == IDLE && newState == INHALING) {
                     tvBreathingInstructions.setText("Inhale...");
-                    startCountdownTimer();
+                    startCountdownTimer(4000);
                 } else if (previousState == INHALING && newState == HOLDING) {
-                    tvBreathingInstructions.setText("Release when ready");
+                    tvBreathingInstructions.setText("Release when ready to exhale...");
                     countDownTimer.cancel();
                     tvCountdownTimer.setText("...");
                 } else if (previousState == INHALING && newState == RETURNING) {
-                    tvBreathingInstructions.setText("Resetting...");
+                    tvBreathingInstructions.setText("Gently returning...");
                     countDownTimer.cancel();
                     tvCountdownTimer.setText("...");
                 } else if (previousState == HOLDING && newState == RETURNING) {
                     tvBreathingInstructions.setText("Exhale...");
-                    startCountdownTimer();
+                    startCountdownTimer(6000);
                 } else if (previousState == RETURNING && newState == IDLE) {
                     tvBreathingInstructions.setText("Press and hold to inhale...");
                     countDownTimer.cancel();
@@ -101,9 +101,9 @@ public class BreathingActivity extends AppCompatActivity {
         });
     }
 
-    private void startCountdownTimer() {
-        tvCountdownTimer.setText("4");
-        countDownTimer = new CountDownTimer(4000, 1000) {
+    private void startCountdownTimer(long millisInFuture) {
+        tvCountdownTimer.setText(String.valueOf((int)(millisInFuture/1000)));
+        countDownTimer = new CountDownTimer(millisInFuture, 1000) {
             @Override
             public void onFinish() {
             }

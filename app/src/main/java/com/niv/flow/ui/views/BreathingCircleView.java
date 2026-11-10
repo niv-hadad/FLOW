@@ -159,7 +159,7 @@ public class BreathingCircleView extends View {
         long returnDuration = (long) (4000 * ((currentRadius - minRadius) / (maxRadius - minRadius)));
         if (breathingState == HOLDING) {
             showRipple = true;
-            returnDuration = 4000;
+            returnDuration = 6000;
             listener.onStateChanged(HOLDING, RETURNING);
         } else {
             showRipple = false;
