@@ -48,21 +48,21 @@ public class BreathingActivity extends AppCompatActivity {
         breathingCircleView.setBreathingListener(new BreathingCircleView.BreathingListener() {
             @Override
             public void onStateChanged(BreathingState previousState, BreathingState newState) {
-                if (previousState==IDLE && newState==INHALING) {
+                if (previousState == IDLE && newState == INHALING) {
                     tvBreathingInstructions.setText("Inhale...");
                     startCountdownTimer();
-                } else if (previousState==INHALING && newState==HOLDING) {
+                } else if (previousState == INHALING && newState == HOLDING) {
                     tvBreathingInstructions.setText("Release when ready");
                     countDownTimer.cancel();
                     tvCountdownTimer.setText("...");
-                } else if (previousState==INHALING && newState==RETURNING) {
+                } else if (previousState == INHALING && newState == RETURNING) {
                     tvBreathingInstructions.setText("Resetting...");
                     countDownTimer.cancel();
                     tvCountdownTimer.setText("...");
-                } else if (previousState==HOLDING && newState==RETURNING) {
+                } else if (previousState == HOLDING && newState == RETURNING) {
                     tvBreathingInstructions.setText("Exhale...");
                     startCountdownTimer();
-                } else if (previousState==RETURNING && newState==IDLE) {
+                } else if (previousState == RETURNING && newState == IDLE) {
                     tvBreathingInstructions.setText("Press and hold to inhale...");
                     countDownTimer.cancel();
                     tvCountdownTimer.setText("4");
@@ -85,7 +85,7 @@ public class BreathingActivity extends AppCompatActivity {
         btnExitBreathing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (countDownTimer!=null)
+                if (countDownTimer != null)
                     countDownTimer.cancel();
                 Intent intent = new Intent(BreathingActivity.this, MainActivity.class);
                 startActivity(intent);
@@ -103,14 +103,14 @@ public class BreathingActivity extends AppCompatActivity {
 
     private void startCountdownTimer() {
         tvCountdownTimer.setText("4");
-        countDownTimer = new CountDownTimer(4000,1000) {
+        countDownTimer = new CountDownTimer(4000, 1000) {
             @Override
             public void onFinish() {
             }
 
             @Override
             public void onTick(long l) {
-                String currentCount = String.valueOf((int)(Math.ceil((double)l /1000)));
+                String currentCount = String.valueOf((int) (Math.ceil((double) l / 1000)));
                 tvCountdownTimer.setText(currentCount);
             }
         }.start();

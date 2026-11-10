@@ -1,4 +1,3 @@
-
 package com.niv.flow.ui.views;
 
 import static android.view.MotionEvent.ACTION_CANCEL;
@@ -67,19 +66,19 @@ public class BreathingCircleView extends View {
 
     public BreathingCircleView(Context context) {
         super(context);
-        this.listener=null;
+        this.listener = null;
         init();
     }
 
     public BreathingCircleView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        this.listener=null;
+        this.listener = null;
         init();
     }
 
     public BreathingCircleView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        this.listener=null;
+        this.listener = null;
         init();
     }
 
@@ -87,6 +86,7 @@ public class BreathingCircleView extends View {
         public void onStateChanged(BreathingState previousState, BreathingState newState);
         public void onBreathingCycleCompleted();
     }
+
     public void setBreathingListener(BreathingListener listener) {
         this.listener = listener;
     }
@@ -122,19 +122,19 @@ public class BreathingCircleView extends View {
     }
 
     private void startInhaleAnimation() {
-        listener.onStateChanged(IDLE,INHALING);
+        listener.onStateChanged(IDLE, INHALING);
         breathingState = INHALING;
         animator = ValueAnimator.ofFloat(minRadius, maxRadius);
         animator.setInterpolator(new LinearInterpolator());
         animator.setDuration(4000);
 
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                    @Override
-                    public void onAnimationUpdate(@NonNull ValueAnimator valueAnimator) {
-                        currentRadius = (float) valueAnimator.getAnimatedValue();
-                        updateCircleAppearance();
-                        invalidate();
-                    }
+            @Override
+            public void onAnimationUpdate(@NonNull ValueAnimator valueAnimator) {
+                currentRadius = (float) valueAnimator.getAnimatedValue();
+                updateCircleAppearance();
+                invalidate();
+            }
         });
         animator.addListener(new AnimatorListenerAdapter() {
             boolean cancelled = false;
@@ -147,7 +147,7 @@ public class BreathingCircleView extends View {
             public void onAnimationEnd(Animator animation) {
                 if (!cancelled) {
                     breathingState = HOLDING;
-                    listener.onStateChanged(INHALING,HOLDING);
+                    listener.onStateChanged(INHALING, HOLDING);
                 }
             }
         });
@@ -156,15 +156,15 @@ public class BreathingCircleView extends View {
 
     private void startReturnAnimation() {
         boolean showRipple;
-        long returnDuration=(long)(4000*((currentRadius-minRadius)/(maxRadius-minRadius)));
-        if (breathingState==HOLDING) {
-            showRipple=true;
-            returnDuration=4000;
-            listener.onStateChanged(HOLDING,RETURNING);
+        long returnDuration = (long) (4000 * ((currentRadius - minRadius) / (maxRadius - minRadius)));
+        if (breathingState == HOLDING) {
+            showRipple = true;
+            returnDuration = 4000;
+            listener.onStateChanged(HOLDING, RETURNING);
         } else {
             showRipple = false;
-            if (breathingState==INHALING)
-                listener.onStateChanged(INHALING,RETURNING);
+            if (breathingState == INHALING)
+                listener.onStateChanged(INHALING, RETURNING);
         }
         breathingState = RETURNING;
 
@@ -176,47 +176,47 @@ public class BreathingCircleView extends View {
         animator.setDuration(returnDuration);
 
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                    @Override
-                    public void onAnimationUpdate(@NonNull ValueAnimator valueAnimator) {
-                        currentRadius = (float) valueAnimator.getAnimatedValue();
-                        updateCircleAppearance();
-                        float p = valueAnimator.getAnimatedFraction();
-                        if (showRipple) {
-                            if (p >= 0f && p <= 0.70f) {
-                                float p1 = p / 0.70f;
-                                rippleRadius1 = maxRadius + (rippleMaxRadius - maxRadius) * p1;
-                                rippleAlpha1 = (int) (MAX_RIPPLE_ALPHA * (1f - p1));
-                            } else {
-                                rippleAlpha1 = 0;
-                            }
-
-                            if (p >= 0.22f && p <= 0.92f) {
-                                float p2 = (p - 0.22f) / 0.70f;
-                                rippleRadius2 = maxRadius + (rippleMaxRadius - maxRadius) * p2;
-
-                                if (p2 <= 0.15f) {
-                                    rippleAlpha2 = (int) (MAX_RIPPLE_ALPHA * p2 / 0.15f);
-                                } else {
-                                    rippleAlpha2 = (int) (MAX_RIPPLE_ALPHA * (1f - p2) / 0.85f);
-                                }
-                            } else {
-                                rippleAlpha2 = 0;
-                            }
-                        }
-                        invalidate();
+            @Override
+            public void onAnimationUpdate(@NonNull ValueAnimator valueAnimator) {
+                currentRadius = (float) valueAnimator.getAnimatedValue();
+                updateCircleAppearance();
+                float p = valueAnimator.getAnimatedFraction();
+                if (showRipple) {
+                    if (p >= 0f && p <= 0.70f) {
+                        float p1 = p / 0.70f;
+                        rippleRadius1 = maxRadius + (rippleMaxRadius - maxRadius) * p1;
+                        rippleAlpha1 = (int) (MAX_RIPPLE_ALPHA * (1f - p1));
+                    } else {
+                        rippleAlpha1 = 0;
                     }
-                });
+
+                    if (p >= 0.22f && p <= 0.92f) {
+                        float p2 = (p - 0.22f) / 0.70f;
+                        rippleRadius2 = maxRadius + (rippleMaxRadius - maxRadius) * p2;
+
+                        if (p2 <= 0.15f) {
+                            rippleAlpha2 = (int) (MAX_RIPPLE_ALPHA * p2 / 0.15f);
+                        } else {
+                            rippleAlpha2 = (int) (MAX_RIPPLE_ALPHA * (1f - p2) / 0.85f);
+                        }
+                    } else {
+                        rippleAlpha2 = 0;
+                    }
+                }
+                invalidate();
+            }
+        });
 
         animator.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
-                    breathingState = IDLE;
-                    rippleAlpha1 = 0;
-                    rippleAlpha2 = 0;
-                    invalidate();
-                    listener.onStateChanged(RETURNING,IDLE);
-                    if (showRipple)
-                        listener.onBreathingCycleCompleted();
+                breathingState = IDLE;
+                rippleAlpha1 = 0;
+                rippleAlpha2 = 0;
+                invalidate();
+                listener.onStateChanged(RETURNING, IDLE);
+                if (showRipple)
+                    listener.onBreathingCycleCompleted();
             }
         });
         animator.start();

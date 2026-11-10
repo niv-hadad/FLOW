@@ -19,7 +19,6 @@ import com.niv.flow.R;
 import com.niv.flow.data.HelperDB;
 import com.niv.flow.models.User;
 import com.niv.flow.ui.BreathingActivity;
-import com.niv.flow.ui.auth.AuthActivity;
 import com.niv.flow.utils.DailyInspiration;
 
 import java.time.LocalTime;
@@ -37,6 +36,7 @@ public class HomeFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
+    @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initComponent();
