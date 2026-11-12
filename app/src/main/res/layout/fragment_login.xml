@@ -101,7 +101,6 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSubmitAuth"
             android:layout_width="367dp"

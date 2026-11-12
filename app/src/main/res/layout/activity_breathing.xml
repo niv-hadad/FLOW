@@ -45,7 +45,7 @@
     </com.niv.flow.ui.views.BreathingCircleView>
 
     <TextView
-        android:id="@+id/tvBreathingInstructions"
+        android:id="@+id/tvBreathingInstruction"
         android:layout_width="360dp"
         android:layout_height="30dp"
         android:layout_marginTop="-30dp"

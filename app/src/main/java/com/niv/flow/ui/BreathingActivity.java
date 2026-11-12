@@ -31,7 +31,7 @@ import java.util.Locale;
 public class BreathingActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     HelperDB helperDB;
-    TextView tvBreathingInstructions, tvCountdownTimer;
+    TextView tvBreathingInstruction, tvCountdownTimer;
     CountDownTimer countDownTimer;
     ImageButton btnExitBreathing, btnBreathingInfo;
     BreathingCircleView breathingCircleView;
@@ -49,21 +49,21 @@ public class BreathingActivity extends AppCompatActivity {
             @Override
             public void onStateChanged(BreathingState previousState, BreathingState newState) {
                 if (previousState == IDLE && newState == INHALING) {
-                    tvBreathingInstructions.setText("Inhale...");
+                    tvBreathingInstruction.setText("Inhale...");
                     startCountdownTimer(4000);
                 } else if (previousState == INHALING && newState == HOLDING) {
-                    tvBreathingInstructions.setText("Release when ready to exhale...");
+                    tvBreathingInstruction.setText("Release when ready to exhale");
                     countDownTimer.cancel();
                     tvCountdownTimer.setText("...");
                 } else if (previousState == INHALING && newState == RETURNING) {
-                    tvBreathingInstructions.setText("Gently returning...");
+                    tvBreathingInstruction.setText("Gently returning...");
                     countDownTimer.cancel();
                     tvCountdownTimer.setText("...");
                 } else if (previousState == HOLDING && newState == RETURNING) {
-                    tvBreathingInstructions.setText("Exhale...");
+                    tvBreathingInstruction.setText("Exhale...");
                     startCountdownTimer(6000);
                 } else if (previousState == RETURNING && newState == IDLE) {
-                    tvBreathingInstructions.setText("Press and hold to inhale...");
+                    tvBreathingInstruction.setText("Press and hold to inhale...");
                     countDownTimer.cancel();
                     tvCountdownTimer.setText("4");
                 }
@@ -119,7 +119,7 @@ public class BreathingActivity extends AppCompatActivity {
     private void initComponent() {
         helperDB = new HelperDB(this);
         sharedPreferences = getSharedPreferences("com.niv.flow.SharedPreferences", MODE_PRIVATE);
-        tvBreathingInstructions = findViewById(R.id.tvBreathingInstructions);
+        tvBreathingInstruction = findViewById(R.id.tvBreathingInstruction);
         tvCountdownTimer = findViewById(R.id.tvCountdownTimer);
         btnExitBreathing = findViewById(R.id.btnExitBreathing);
         btnBreathingInfo = findViewById(R.id.btnBreathingInfo);
